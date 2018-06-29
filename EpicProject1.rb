@@ -8,12 +8,9 @@
 # puts JSON.parse(response)
 
 
-
-
-
 require 'net/http'
 require 'json'
-require "pry"
+# require "pry"
 def call_api(endpoint)
     uri = URI(endpoint)
     response = Net::HTTP.get(uri)
@@ -36,8 +33,9 @@ def get_info_3(data_i_want)
     # data_i_want[...][...]
 end
 
-def my_html(info_1, info_2, info_3)
-   "<html><body>Here is #{info_1}. Here is #{info_2}. Here is #{info_3}.</body></html>" 
+def get_my_html(info_1, info_2, info_3)
+   # "<html><body>Here is #{info_1}. Here is #{info_2}. Here is #{info_3}.</body></html>" 
+   "This is Rikki."
 end
 
 def write_to_file(filename, my_html)
@@ -51,6 +49,5 @@ info_1 = get_info_1(json_data)
 info_2 = get_info_2(json_data)
 info_3 = get_info_3(json_data)
 my_html = get_my_html(info_1, info_2, info_3) 
-binding.pry
 filename = "my_page.html"
 write_to_file(filename, my_html)
